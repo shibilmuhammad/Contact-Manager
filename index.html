@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-mainBg m-0 p-0 " id="body">
+    <header class="bg-mainBlack h -full  flex space-x-10  md:space-x-20 lg:space-x-44 lg:py-10 py-6  md:px-20 px-4 ">
+        <div class="logo">
+            <a href="#">
+                <img src="/asset/whiteL.png" class="md:w-16 w-12 my-2 " alt="">
+            </a>
+        </div>
+        <div class="searchbox flex bg-white space-x-3 w-2/3 rounded-md">
+            <button onclick="search()">
+                <img src="/asset/zoom-lens.png" class="h-5 md:h-5 ml-2" alt="">
+            </button>
+            <input type="text" id="searchButton" onchange="search()" class="w-full rounded-md outline-none" placeholder="Search name here">
+        </div>
+    </header>
+    <main  class="py- md:px-20  px-4 ">
+        <!-- add card button -->
+        <div  class="button flex justify-between">
+            <button id="addCard" class="bg-maincream  text-mainBlack rounded-md  text-sm md:text-xl flex items-center mt-6 px-4 ">
+                <span class="lg:text-4xl text-xl mr-2 mb-1">+ </span>New card
+            </button>
+            <div class="flex flex-col space-y-3 ">
+                <button id="clearAll" class="bg-maincream  text-mainBlack rounded-md  text-sm md:text-xl flex items-center mt-6 px-4 pl-2;">
+                    Delete All   <span class="lg:text-4xl text-xl mr-2 mb-1">- </span>
+                  </button>  
+            </div>
+        </div>
+        <select name="" id="Sort" onchange="sortingArray();" class="bg-maincream py-1 rounded-md  mt-2 text-xs lg:text-sm opacity-60">
+            <option value="sortBy">Sort by</option>
+            <option value="A-Z">A-Z</option>
+            <option value="Z-A">Z-A</option>
+            <option value="newestFirst">Newest first</option>
+            <option value="oldestFirst">Oldest first</option>
+          </select>
+        <div id="card-container-id"  class="cardContainer lg:mt-20 mt-8 grid  gap-y-10 mb-10  lg:grid lg:grid-cols-2 lg:gap-x-10 xl:grid-cols-3 2xl:grid-cols-3  grid-cols-1 ">
+         <!-- card -->
+         <div class="card bg-mainCard px-3 py-4  md:w-full w-[360px] rounded-xl shadow-gray-800 shadow-lg relative hidden">
+            <!--cardHead-->
+            <div class="cardHead flex items-center "> 
+                <!--imageAndCircle-->
+                <div class="imageAndCircle bg-maincream h-24 w-24 lg:h-32 lg:w-32 xl:h-24 xl:w-24 rounded-full  relative flex items-center justify-center "> 
+                     <!--userImage-->
+                    <img src="/asset/user.png" class="lg:h-[88px] h-16 xl:h-16 " alt="">
+                </div>
+                <!--nameAndRectangle-->
+                <div class="nameAndRectangle bg-maincream w-fit h-fit lg:pr-16 xl:text-sm lg:text-2xl font-semibold px-8 py-2 ml-[-13px] md:text-2xl text-mainBlack rounded-r-lg">
+             <!--userName-->      SHIBIL MUHAMMAD PK AYANCHER
+                </div>
+            </div>
+                <!--emailAndPhonetext-->
+            <div class="emailAndPhone text-mainBg lg:ml-24 xl:ml-[4rem] xl:text-xs xl:mt-1 ml-[7rem]  -mt-3 mb-6 lg:text-xl">
+                <!--emailText--> <h1 class="">Email : shibilmuhammadpkpanayulla678@gamil.com</h1>
+                <!--phoneText--> <h2>Phone : 8086812602</h2>
+            </div>
+            <!-- editAndTrash -->
+            <div class="EditAndTrash absolute top-2 right-3 flex space-x-6 ">
+                <!-- trashButton -->
+                <button>
+                    <img src="/asset/trash-can.png" class="lg:h-7 lg:w-6 mt-1 h-5 w-4 xl:h-5 xl:w-4" alt="">
+                </button>
+                <!-- editButton -->
+                <button>
+                    <img src="/asset/edit-button.png" class="lg:h-9 h-7 xl:h-7" alt="">
+                </button>
+            </div>
+            <!-- callAndMailIcon -->
+            <div class="callAndMail flex justify-center space-x-5">
+                <!-- emailCircle -->
+                <button class="circle  w-8 h-8 rounded-full bg-mainBg flex items-center justify-center px-2">
+                             <!--emailImage-->  <img src="/asset/email.png" class="w-6" alt="">
+                </button>
+                <!-- callCircle -->
+                <button class="circle  w-8 h-8 rounded-full bg-mainBg flex items-center justify-center px-2 ">
+                        <!--callImage-->    <img src="/asset/call.png" class="w-6" alt="">
+                </button>
+            </div>
+        </div>
+        </div>    
+    </main>
+    <div id="loginPage"  class="fixed inset-0 flex justify-center items-center bg-[rgba(0,0,0,0.3)] ">
+        <div class=" bg-white w-full lg:w-4/12 h-fit  rounded-xl mx-5  mt-8  pb-5 lg:px-8 px-6 relative ">
+            <button id="closeButton" >
+                <img src="asset/close (1).png" class="w-3 lg:w-4 right-5 absolute top-4 lg:right-10  lg:top-6" alt="">
+            </button>
+            <div class="formContainer flex flex-col justify-center mt-10 space-y-5">
+                <div>
+                    <input type="text" id="name" class="w-full py-3 lg:py-2 pl-8 rounded-2xl bg-gray-100 " placeholder="Enter your name" >
+                    <label class="hidden text-red-800 ml-8" id="invalidName" for="">Invalid name</label>
+                </div>
+                <div>
+                    <input type="text" id="email" class="w-full py-3 lg:py-2 pl-8 rounded-2xl bg-gray-100 " placeholder="Email" >
+                    <label class="hidden ml-8 text-red-800" id="invalidEmail" for="">Invalid email</label>
+                </div>
+                <div>
+                    <input type="text" id="phone" class="w-full py-3 lg:py-2 pl-8 rounded-2xl bg-gray-100 " placeholder="Phone" >
+                    <label class="hidden ml-8 text-red-800" id="invalidNumber" for="">Invalid Number</label>
+                </div>
+                <div class="flex flex-col items-center space-y-4">
+                   <h1 class="text-red-800 hidden" id="Nochanges">No changes made   </h1> 
+                    <button id="submitButton" class="bg-mainBlack text-mainBg px-10 py-3  w-full rounded-full " >
+                        Submit
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
