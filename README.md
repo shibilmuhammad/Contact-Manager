@@ -10,4 +10,10 @@ A responsive contact manager application built with pure JavaScript and utilizin
 * Search functionality for quick contact lookup.
 * Sorting options: A-Z, Z-A, newest first, and oldest first.
 
-  
+**Usage**
+* Open the application in your web browser.
+* Use the "Add Contact" button to add new contacts.
+* Each contact card includes "Call" and "Email" buttons for quick actions.
+* Utilize the search bar for easy contact lookup.
+* Sort contacts using the provided options (A-Z, Z-A, Newest First, Oldest First).
+   
