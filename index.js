@@ -1,4 +1,4 @@
-
+document.getElementById("loginPage").style.display = "none";
 document.getElementById("addCard").addEventListener("click", hidecards);
 document.getElementById("submitButton").addEventListener("click", formValidation);
 
@@ -288,16 +288,17 @@ function displayHome() {
     }
 }
 function creatcard(userNameEntred, emailEntered, numberEntered) {
+    
     let card = document.createElement("div");
     card.id = numberEntered;
     idlist.push(numberEntered);
-    card.className = "card bg-mainCard px-3 py-4  rounded-xl shadow-gray-800 shadow-lg relative md:w-full flex flex-col flex-wrap overflow-hidden";
+    card.className = "card bg-[#7d7c7c] px-3 py-4  rounded-xl shadow-gray-800 shadow-lg relative md:w-full flex flex-col flex-wrap overflow-hidden";
     let cardHead = document.createElement("div");
     cardHead.className = "cardHead flex items-center"
     card.appendChild(cardHead);
 
     let imageAndCircle = document.createElement("div")
-    imageAndCircle.className = "imageAndCircle bg-maincream xl:h-24 xl:w-24 h-24 w-24 lg:h-32 lg:w-32 rounded-full  relative flex items-center justify-center";
+    imageAndCircle.className = "imageAndCircle bg-[#ccc8aa] xl:h-24 xl:w-24 h-24 w-24 lg:h-32 lg:w-32 rounded-full  relative flex items-center justify-center";
     cardHead.appendChild(imageAndCircle);
 
     let userImage = document.createElement("img");
@@ -306,14 +307,14 @@ function creatcard(userNameEntred, emailEntered, numberEntered) {
     imageAndCircle.appendChild(userImage);
 
     let nameAndRectangle = document.createElement("div");
-    nameAndRectangle.className = "nameAndRectangle bg-maincream xl:text-sm w-full h-fit   lg:text-2xl font-semibold px-8 py-2 ml-[-13px] md:text-2xl text-mainBlack rounded-r-lg";
+    nameAndRectangle.className = "nameAndRectangle bg-[#ccc8aa] xl:text-sm w-full h-fit   lg:text-2xl font-semibold px-8 py-2 ml-[-13px] md:text-2xl text-mainBlack rounded-r-lg";
     cardHead.appendChild(nameAndRectangle);
 
     let userName = document.createTextNode(userNameEntred);
     nameAndRectangle.appendChild(userName);
 
     let emailAndPhonetext = document.createElement("div");
-    emailAndPhonetext.className = "emailAndPhone xl:ml-[4rem] xl:text-sm xl:mt-1  text-mainBg lg:ml-24 ml-[5rem] text-sm -mt-3 mb-6 lg:text-xl ";
+    emailAndPhonetext.className = "emailAndPhone xl:ml-[4rem] xl:text-sm xl:mt-1  text-[#f1efef] lg:ml-24 ml-[5rem] text-sm -mt-3 mb-6 lg:text-xl ";
     card.appendChild(emailAndPhonetext);
     let emailh1 = document.createElement("h1");
     emailAndPhonetext.appendChild(emailh1);
@@ -376,7 +377,7 @@ function creatcard(userNameEntred, emailEntered, numberEntered) {
     emailCircle.addEventListener("click", function () {
         window.open(`mailto:${emailEntered}`)
     })
-    emailCircle.className = "circle  w-8 h-8 rounded-full bg-mainBg flex items-center justify-center px-2";
+    emailCircle.className = "circle  w-8 h-8 rounded-full bg-[#f1efef] flex items-center justify-center px-2";
     callAndMailIcon.appendChild(emailCircle);
     let emailImage = document.createElement("img");
     emailImage.src = "/asset/email.png";
@@ -387,7 +388,7 @@ function creatcard(userNameEntred, emailEntered, numberEntered) {
     callCircle.addEventListener("click", function () {
         window.open(`tel:+91 ${numberEntered}`)
     })
-    callCircle.className = "circle  w-8 h-8 rounded-full bg-mainBg flex items-center justify-center px-2";
+    callCircle.className = "circle  w-8 h-8 rounded-full bg-[#f1efef] flex items-center justify-center px-2";
     callAndMailIcon.appendChild(callCircle);
 
     let callImage = document.createElement("img");
@@ -397,6 +398,7 @@ function creatcard(userNameEntred, emailEntered, numberEntered) {
 
     let cardContainer = document.getElementById("card-container-id");
     cardContainer.appendChild(card);
+    document.getElementById("loginPage").style.display = "none";
 }
 document.getElementById("clearAll").addEventListener("click", function () {
     alert("All Cards will be removed")
