@@ -302,7 +302,7 @@ function creatcard(userNameEntred, emailEntered, numberEntered) {
     cardHead.appendChild(imageAndCircle);
 
     let userImage = document.createElement("img");
-    userImage.src = "/asset/user.png";
+    userImage.src = "asset/user.png";
     userImage.className = "lg:h-[88px] h-16 xl:h-16";
     imageAndCircle.appendChild(userImage);
 
@@ -337,7 +337,7 @@ function creatcard(userNameEntred, emailEntered, numberEntered) {
 
     editAndTrash.appendChild(trashButton);
     let trashimage = document.createElement("img");
-    trashimage.src = "/asset/trash-can.png";
+    trashimage.src = "asset/trash-can.png";
     trashimage.className = "lg:h-7 lg:w-6 mt-1 h-5 w-4 xl:h-5 xl:w-4";
     trashButton.appendChild(trashimage);
 
@@ -365,7 +365,7 @@ function creatcard(userNameEntred, emailEntered, numberEntered) {
     })
     editAndTrash.appendChild(editButton);
     let editimage = document.createElement("img");
-    editimage.src = "/asset/edit-button.png";
+    editimage.src = "asset/edit-button.png";
     editimage.className = "lg:h-9 h-7 xl:h-7";
     editButton.appendChild(editimage);
 
@@ -380,7 +380,7 @@ function creatcard(userNameEntred, emailEntered, numberEntered) {
     emailCircle.className = "circle  w-8 h-8 rounded-full bg-[#f1efef] flex items-center justify-center px-2";
     callAndMailIcon.appendChild(emailCircle);
     let emailImage = document.createElement("img");
-    emailImage.src = "/asset/email.png";
+    emailImage.src = "asset/email.png";
     emailImage.className = "w-6";
     emailCircle.appendChild(emailImage);
 
